@@ -9,6 +9,7 @@ import {
   X,
 } from "lucide-react";
 import { InstagramIcon, ThreadsIcon } from "@/components/Icons";
+import { getImagePath } from "@/lib/utils";
 
 interface GalleryItem {
   id: string;
@@ -28,13 +29,13 @@ interface GalleryItem {
 export default function SocialGallery() {
   const [activeItem, setActiveItem] = useState<GalleryItem | null>(null);
 
-  // 갤러리 피드 데이터 정의
+  // 갤러리 피드 데이터 정의 (getImagePath 적용)
   const galleryItems: GalleryItem[] = [
     {
       id: "gal-1",
       title: "“숲속 친구들의 모험” 나만의 첫 한국어 동화책 완성!",
       category: "동화책 창작",
-      image: "/images/program_storybook.jpg",
+      image: getImagePath("/images/program_storybook.jpg"),
       likes: 128,
       caption:
         "7세 윤진 학생이 8주 동안 직접 쓰고 그린 첫 한국어 그림책! 책 제목부터 주인공 동물들의 대사까지 모두 예쁜 우리말로 완성했습니다 📖✨ #Kbookwow #그림책만들기",
@@ -44,7 +45,7 @@ export default function SocialGallery() {
       id: "gal-2",
       title: "흙과 교감하는 도예 시간, 한글 도자기 그릇 빚기",
       category: "도예 융합",
-      image: "/images/program_pottery.jpg",
+      image: getImagePath("/images/program_pottery.jpg"),
       likes: 142,
       caption:
         "물레를 돌리며 부드러운 흙의 촉감을 느끼고, 그릇 바닥에 자신의 한글 이름을 새겨 넣었어요. 살아있는 오감 융합 한국어 수업 현장입니다 🏺💖 #도예한국어",
@@ -54,7 +55,7 @@ export default function SocialGallery() {
       id: "gal-3",
       title: "랜선 너머로 웃음꽃 피어나는 1:1 온라인 리딩 수업",
       category: "온라인 클래스",
-      image: "/images/program_online.jpg",
+      image: getImagePath("/images/program_online.jpg"),
       likes: 95,
       caption:
         "미국 동부와 서부 어디서든 편안하게 접속하는 화상 한국어! 선생님과 눈 맞추며 동화 속 어휘 카드를 맞추는 즐거운 시간 💻🌟 #재미한인한국어",
@@ -64,7 +65,7 @@ export default function SocialGallery() {
       id: "gal-4",
       title: "알록달록 전통 한지와 부채 만들기 문화 체험",
       category: "전통 공예",
-      image: "/images/program_craft.jpg",
+      image: getImagePath("/images/program_craft.jpg"),
       likes: 110,
       caption:
         "붓글씨로 써 내려간 소원과 오색 한지로 꾸민 전통 부채! 우리 조상들의 지혜와 한국의 전통 색채미를 직접 체험했습니다 🎎🎨 #한국문화체험",
@@ -74,7 +75,7 @@ export default function SocialGallery() {
       id: "gal-5",
       title: "생각을 문장으로 꽃피우는 창의적 글쓰기 시간",
       category: "창의 글쓰기",
-      image: "/images/program_writing.jpg",
+      image: getImagePath("/images/program_writing.jpg"),
       likes: 88,
       caption:
         "“나의 꿈꾸는 이야기 책” - 지우 학생의 반짝반짝 빛나는 상상력이 담긴 한글 일기장입니다. 스티커도 붙이고 문장도 예쁘게 다듬었어요 ✍️🌈 #글쓰기워크숍",
@@ -84,7 +85,7 @@ export default function SocialGallery() {
       id: "gal-6",
       title: "밤하늘 은하수처럼 빛나는 우리 아이들의 한국어 여정",
       category: "Kbookwow 모먼트",
-      image: "/images/hero.jpg",
+      image: getImagePath("/images/hero.jpg"),
       likes: 175,
       caption:
         "책 한 권이 아이에게 건네는 마법 같은 선물. K Book WOW와 함께 스스로 말하고 즐겁게 읽는 한국어의 기쁨을 시작해보세요! 🚀💫 #KBookWOW",

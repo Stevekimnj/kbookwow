@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Sparkles, ArrowRight, Play, CheckCircle2, Heart, Award } from "lucide-react";
+import { Sparkles, ArrowRight, CheckCircle2, Heart, Award } from "lucide-react";
+import { getImagePath } from "@/lib/utils";
 
 interface HeroProps {
   onOpenContact: () => void;
@@ -152,10 +153,10 @@ export default function Hero({ onOpenContact }: HeroProps) {
             <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-indigo-500/30 via-pink-500/20 to-cyan-500/30 blur-2xl opacity-80" />
 
             <div className="relative rounded-3xl overflow-hidden border border-white/15 bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl p-3 shadow-2xl group">
-              {/* 메인 히어로 이미지 */}
+              {/* 메인 히어로 이미지 (getImagePath 적용) */}
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/hero.jpg"
+                  src={getImagePath("/images/hero.jpg")}
                   alt="K Book WOW 한국어 마법 동화 읽기"
                   fill
                   priority

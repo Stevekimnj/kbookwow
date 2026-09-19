@@ -12,6 +12,7 @@ import {
   CheckCircle,
   X,
 } from "lucide-react";
+import { getImagePath } from "@/lib/utils";
 
 interface Program {
   id: string;
@@ -43,7 +44,7 @@ interface ProgramSectionProps {
 export default function ProgramSection({ onSelectProgram }: ProgramSectionProps) {
   const [selectedProgram, setSelectedProgram] = useState<Program | null>(null);
 
-  // 5대 프로그램 데이터 정의
+  // 5대 프로그램 데이터 정의 (getImagePath 적용)
   const programs: Program[] = [
     {
       id: "online-reading",
@@ -54,7 +55,7 @@ export default function ProgramSection({ onSelectProgram }: ProgramSectionProps)
       accentColor: "border-cyan-500/30 group-hover:border-cyan-400/80",
       description:
         "재미 한인 및 다국어 학습자의 레벨에 맞춘 소수정예 인터랙티브 온라인 수업. 풍부한 한국어 그림책을 함께 읽고 질문하며, 독해력·어휘력·표현력을 탄탄하게 다집니다.",
-      image: "/images/program_online.jpg",
+      image: getImagePath("/images/program_online.jpg"),
       icon: <BookOpen className="w-5 h-5 text-cyan-400" />,
       details: {
         target: "유치부(K) ~ 초등/중등 (레벨별 맞춤 반 편성)",
@@ -77,7 +78,7 @@ export default function ProgramSection({ onSelectProgram }: ProgramSectionProps)
       accentColor: "border-pink-500/30 group-hover:border-pink-400/80",
       description:
         "아이가 작가이자 일러스트레이터가 됩니다! 스스로 이야기를 짓고 우리말로 문장을 다듬으며, 직접 그린 그림과 함께 실물 책으로 출판하는 특별한 성취감을 선물합니다.",
-      image: "/images/program_storybook.jpg",
+      image: getImagePath("/images/program_storybook.jpg"),
       icon: <Palette className="w-5 h-5 text-pink-400" />,
       details: {
         target: "만 6세 이상 어린이 및 청소년",
@@ -100,7 +101,7 @@ export default function ProgramSection({ onSelectProgram }: ProgramSectionProps)
       accentColor: "border-amber-500/30 group-hover:border-amber-400/80",
       description:
         "시, 짧은 동화, 편지, 일기 등 자유로운 글쓰기를 통해 우리말의 뉘앙스를 체득합니다. 틀에 갇히지 않은 개성 넘치는 문장력을 길러줍니다.",
-      image: "/images/program_writing.jpg",
+      image: getImagePath("/images/program_writing.jpg"),
       icon: <PenTool className="w-5 h-5 text-amber-400" />,
       details: {
         target: "초등 2학년 이상 어린이 및 이중언어 학습자",
@@ -123,7 +124,7 @@ export default function ProgramSection({ onSelectProgram }: ProgramSectionProps)
       accentColor: "border-emerald-500/30 group-hover:border-emerald-400/80",
       description:
         "전통 한지 공예, 전통 부채 만들기, 매듭, 명절 민속놀이와 전래동화를 결합하여 우리 문화의 아름다움을 온몸으로 느끼는 생생한 체험형 수업입니다.",
-      image: "/images/program_craft.jpg",
+      image: getImagePath("/images/program_craft.jpg"),
       icon: <Sparkles className="w-5 h-5 text-emerald-400" />,
       details: {
         target: "유아 및 초등 전 연령 (가족 동반 가능)",
@@ -146,7 +147,7 @@ export default function ProgramSection({ onSelectProgram }: ProgramSectionProps)
       accentColor: "border-purple-500/30 group-hover:border-purple-400/80",
       description:
         "부드러운 흙을 반죽하고 물레를 돌리며 오감을 자극하는 도예 체험! 도자기 위에 우리말 글귀와 그림을 새기며 잊을 수 없는 융합 학습을 경험합니다.",
-      image: "/images/program_pottery.jpg",
+      image: getImagePath("/images/program_pottery.jpg"),
       icon: <Layers className="w-5 h-5 text-purple-400" />,
       details: {
         target: "만 5세 이상 어린이 및 청소년",
@@ -184,7 +185,7 @@ export default function ProgramSection({ onSelectProgram }: ProgramSectionProps)
           </p>
         </div>
 
-        {/* 5대 프로그램 카드 그리드 (상단 3개 + 하단 2개) */}
+        {/* 5대 프로그램 카드 그리드 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((prog) => (
             <div
