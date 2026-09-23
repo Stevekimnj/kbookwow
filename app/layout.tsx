@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko" className="dark scroll-smooth">
+    <html lang="ko" className="scroll-smooth">
       <head>
         {/* Google Fonts: 한글 가독성이 우수한 Noto Sans KR & 영어 Outfit 폰트 불러오기 */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -66,7 +66,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#07080D] text-slate-100 min-h-screen flex flex-col selection:bg-purple-600 selection:text-white">
+      <body suppressHydrationWarning className="bg-[var(--bg-main)] text-[var(--text-primary)] min-h-screen flex flex-col selection:bg-[var(--color-primary)] selection:text-white">
         {children}
       </body>
     </html>

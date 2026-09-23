@@ -21,15 +21,9 @@ interface GalleryItem {
   source: "instagram" | "threads";
 }
 
-/**
- * SocialGallery 컴포넌트
- * Kbookwow 공식 Instagram 및 Threads의 생생한 활동 모습과 학생들의 실제 창작물을
- * 트렌디한 소셜 피드 그리드 형태로 구현한 섹션입니다.
- */
 export default function SocialGallery() {
   const [activeItem, setActiveItem] = useState<GalleryItem | null>(null);
 
-  // 갤러리 피드 데이터 정의 (getImagePath 적용)
   const galleryItems: GalleryItem[] = [
     {
       id: "gal-1",
@@ -83,33 +77,33 @@ export default function SocialGallery() {
     },
     {
       id: "gal-6",
-      title: "밤하늘 은하수처럼 빛나는 우리 아이들의 한국어 여정",
+      title: "따사로운 햇살처럼 피어나는 우리 아이들의 한국어 여정",
       category: "Kbookwow 모먼트",
-      image: getImagePath("/images/hero.jpg"),
+      image: getImagePath("/images/moment_bright.jpg"),
       likes: 175,
       caption:
-        "책 한 권이 아이에게 건네는 마법 같은 선물. K Book WOW와 함께 스스로 말하고 즐겁게 읽는 한국어의 기쁨을 시작해보세요! 🚀💫 #KBookWOW",
+        "책과 함께 따뜻한 오후의 햇살을 닮은 우리 아이들의 미소. KBookWoW와 함께 스스로 말하고 즐겁게 읽는 한국어의 기쁨을 시작해보세요! ✨📚 #KBookWoW",
       source: "threads",
     },
   ];
 
   return (
-    <section id="gallery" className="relative py-28 bg-[#080A10]">
+    <section id="gallery" className="relative py-28 bg-[#FFFDF8]">
       {/* 배경 장식 */}
-      <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-cyan-600/10 blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-[var(--color-primary)]/5 blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* 섹션 헤더 */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-semibold text-cyan-300 mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 text-xs font-semibold text-[var(--color-primary)] mb-4">
+              <Sparkles className="w-3.5 h-3.5" />
               <span>Real Classroom Moments & Projects</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy tracking-tight">
               K Book WOW <span className="gradient-text-primary">수업 현장 & 학생 갤러리</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 font-normal mt-3 max-w-2xl">
+            <p className="text-base sm:text-lg text-[var(--text-secondary)] font-normal mt-3 max-w-2xl">
               아이들이 직접 손으로 만들고 완성한 감동의 순간들!
               공식 Instagram과 Threads에서 더 많은 실시간 수업 소식을 만나보실 수 있습니다.
             </p>
@@ -121,7 +115,7 @@ export default function SocialGallery() {
               href="https://www.instagram.com/kbookwow/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 hover:opacity-90 transition-all shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:scale-105"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-purple-500 via-pink-500 to-rose-400 hover:opacity-90 transition-all shadow-[0_4px_14px_rgba(236,72,153,0.3)] hover:scale-105"
             >
               <InstagramIcon className="w-4 h-4" />
               <span>@kbookwow Instagram</span>
@@ -131,9 +125,9 @@ export default function SocialGallery() {
               href="https://www.threads.com/@kbookwow?xmt=AQG0oellG63L68OHc9nkuXkxfX950WnVa-CCW6EoVWVH6s4"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-white/10 hover:bg-white/15 border border-white/15 transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-navy bg-white hover:bg-gray-50 border border-gray-200 transition-all hover:scale-105 shadow-sm"
             >
-              <ThreadsIcon className="w-4 h-4 text-cyan-400" />
+              <ThreadsIcon className="w-4 h-4 text-slate-800" />
               <span>Threads</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
@@ -146,36 +140,36 @@ export default function SocialGallery() {
             <div
               key={item.id}
               onClick={() => setActiveItem(item)}
-              className="group cursor-pointer rounded-3xl overflow-hidden glass-card border border-white/10 hover:border-indigo-400/50 transition-all duration-300 flex flex-col"
+              className="group cursor-pointer rounded-3xl overflow-hidden clean-card bg-white border border-gray-100 hover:border-[var(--color-primary)]/40 hover:shadow-md transition-all duration-300 flex flex-col"
             >
               {/* 이미지 썸네일 */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-900">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-xs font-semibold text-white bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-xs font-semibold text-navy bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm">
                     🔍 크게 보기
                   </span>
                 </div>
 
                 {/* 소셜 배지 및 카테고리 */}
                 <div className="absolute top-3 left-3 flex items-center gap-2">
-                  <span className="px-2.5 py-1 rounded-full text-[11px] font-bold text-white bg-black/60 backdrop-blur-md border border-white/10">
+                  <span className="px-2.5 py-1 rounded-full text-[11px] font-bold text-navy bg-white/90 backdrop-blur-md shadow-sm border border-white/50">
                     {item.category}
                   </span>
                 </div>
 
                 <div className="absolute top-3 right-3">
-                  <span className="p-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-white">
+                  <span className="p-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-sm border border-white/50 flex items-center justify-center text-navy">
                     {item.source === "instagram" ? (
-                      <InstagramIcon className="w-3.5 h-3.5 text-pink-400" />
+                      <InstagramIcon className="w-3.5 h-3.5 text-pink-500" />
                     ) : (
-                      <ThreadsIcon className="w-3.5 h-3.5 text-cyan-400" />
+                      <ThreadsIcon className="w-3.5 h-3.5 text-slate-800" />
                     )}
                   </span>
                 </div>
@@ -184,21 +178,21 @@ export default function SocialGallery() {
               {/* 본문 캡션 */}
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-base font-bold text-white mb-2 line-clamp-1 group-hover:text-indigo-300 transition-colors">
+                  <h3 className="text-base font-bold text-navy mb-2 line-clamp-1 group-hover:text-[var(--color-primary)] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                  <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed line-clamp-2">
                     {item.caption}
                   </p>
                 </div>
 
                 {/* 하단 좋아요 & 공유 */}
-                <div className="pt-3 mt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
-                  <div className="flex items-center gap-1 text-pink-400">
-                    <Heart className="w-3.5 h-3.5 fill-pink-400" />
+                <div className="pt-3 mt-3 border-t border-gray-100 flex items-center justify-between text-xs text-gray-400 font-medium">
+                  <div className="flex items-center gap-1 text-pink-500">
+                    <Heart className="w-3.5 h-3.5 fill-pink-500" />
                     <span>{item.likes} Likes</span>
                   </div>
-                  <span className="hover:text-white transition-colors">
+                  <span className="hover:text-[var(--color-primary)] transition-colors">
                     자세히 보기 &gt;
                   </span>
                 </div>
@@ -212,23 +206,23 @@ export default function SocialGallery() {
       {activeItem && (
         <div
           onClick={() => setActiveItem(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-lg animate-fade-in-up"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy/60 backdrop-blur-sm animate-fade-in-up"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-3xl bg-[#0E111B] border border-white/20 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[85vh]"
+            className="relative w-full max-w-3xl bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[85vh]"
           >
             {/* 닫기 버튼 */}
             <button
               onClick={() => setActiveItem(null)}
-              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/70 text-white hover:bg-black/90 border border-white/10"
+              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/80 text-gray-500 hover:text-navy hover:bg-white border border-gray-200 shadow-sm"
               aria-label="닫기"
             >
               <X className="w-5 h-5" />
             </button>
 
             {/* 모달 이미지 */}
-            <div className="relative md:w-3/5 aspect-square md:aspect-auto h-72 md:h-auto bg-black">
+            <div className="relative md:w-3/5 aspect-square md:aspect-auto h-72 md:h-auto bg-gray-100">
               <Image
                 src={activeItem.image}
                 alt={activeItem.title}
@@ -238,26 +232,26 @@ export default function SocialGallery() {
             </div>
 
             {/* 모달 텍스트 및 SNS 정보 */}
-            <div className="p-6 md:w-2/5 flex flex-col justify-between bg-[#121624]">
+            <div className="p-6 md:w-2/5 flex flex-col justify-between bg-white">
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                  <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/20">
                     {activeItem.category}
                   </span>
-                  <span className="text-xs text-slate-400 flex items-center gap-1 font-['Outfit']">
+                  <span className="text-xs text-gray-400 flex items-center gap-1 font-['Outfit'] font-medium">
                     {activeItem.source === "instagram" ? "@kbookwow Instagram" : "@kbookwow Threads"}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white mb-3">
+                <h3 className="text-lg font-bold text-navy mb-3">
                   {activeItem.title}
                 </h3>
-                <p className="text-sm text-slate-300 leading-relaxed mb-4 whitespace-pre-line">
+                <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-4 whitespace-pre-line font-medium">
                   {activeItem.caption}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                 <a
                   href={
                     activeItem.source === "instagram"
@@ -266,14 +260,14 @@ export default function SocialGallery() {
                   }
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-pink-400 hover:text-pink-300"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-pink-500 hover:text-pink-600"
                 >
                   <span>공식 계정에서 확인</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
                 <button
                   onClick={() => setActiveItem(null)}
-                  className="px-4 py-1.5 rounded-full text-xs font-semibold bg-white/10 text-white hover:bg-white/20"
+                  className="px-4 py-2 rounded-full text-xs font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
                 >
                   닫기
                 </button>
