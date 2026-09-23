@@ -1,3 +1,3 @@
-:HL["/kbookwow/_next/static/css/e13d0aaef7525232.css","style"]
+:HL["/kbookwow/_next/static/css/94a4ec66f3656638.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"XPgYuIYgm3Nb9TsY_Rl4T"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"cUqJ-ygb_nWMsUQjTIq_M"}
